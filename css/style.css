@@ -13,6 +13,10 @@ body {
 	color: #F5F5F5;
 	width: 100%;
 	margin: 0px;
+	/* padding and border included in the element's total width and height */
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
 }
 
 /*Bottle Water Accessories...*/
@@ -23,38 +27,41 @@ body {
 	-webkit-margin-before: 0px;
 	padding: 40px 20px 20px 20px;
     /* padding and border included in the element's total width and height */
-    box-sizing: border-box;
+ 	box-sizing: border-box;
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;
 }
 
 /*Purchase FIJI Water Accessories...*/
 .pageDescription {
-	font-size: 20px;
+	font-size: 22px;
 	background-color: #091A2C;
 	width: 100%;
 	padding: 20px;
 	padding-right: 20%;
 	/* padding and border included in the element's total width and height */
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box; 
-    -moz-box-sizing: border-box;   
+ 	box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
 }
 
+/*on smaller screens, display filter/sort div above products*/
 #display {
-	display: flex;
+	display: block;
+	width: 100%;
+}
+#filterSortContainer,
+#productInfo {
+	width: 100%;
+	float: none;
 }
 
 #filterSortContainer{
 	background-color: #11456A;
-	float: left;
-	align-items: stetch;
-	width: 125px;
-	min-width: 125px;
-	min-height: 100vh;
-	margin-right: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	min-height: 0px;
 }
 
 .filters,
@@ -65,21 +72,28 @@ body {
 /*Filter by Price & Sort By*/
 h3 {
 	color: #F5F5F5;
-	font-size: 16px;
+	font-size: 18px;
+	margin: 0px 0px 2px 0px;
 }
 
 ul {
+	margin: 0px;
 	list-style-type: none;
 	-webkit-padding-start: 0px;
 }
 
-/*styling for filter/sort options*/
+ul,
 li {
-	font-size: 11px;
+	display: inline-block;
+}
+
+li {
+	font-size: 16px;
+	font-weight: 400;
 	background-color: #EDEDED;
 	color: #666666;
 	margin-bottom: 1px;
-	padding: 5px;
+	padding: 10px 15px 10px 10px;
 	border-radius: 15px;
 }
 
@@ -89,17 +103,9 @@ li:active,
 	background-color: #6CCEF8;
 }
 
-/*div that holds all products*/
-#productInfo {
-	float: left;
-	width: 85%;
-	padding-bottom: 20px;
-}
-
-/*on larger screens, three products per row (33% width)*/  
+/*on smaller screens, one product per row (100% width)*/
 .productContainer {
-	display: inline-block;
-	width: 33%;
+		width: 100%;
 }
 
 /*product images fill container*/
@@ -112,52 +118,50 @@ img {
 	text-align: center;
 }
 
-@media screen and (max-width: 850px) {
-	/*on smaller screens, display filter/sort div above products*/
-	#display {
-		display: block;
-	}
-	#filterSortContainer,
-	#productInfo {
-		width: 100%;
-	}
-
-	#filterSortContainer {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-left: 20px;
-		min-height: 0px;
-	}
-
+@media screen and (min-device-width: 500px) and (min-width: 500px) {
 	/*on medium screens, two products per row (50% width)*/
 	.productContainer {
+		display: inline-block;
 		width: 50%;
 	}
 
-	/*filter/sort options are inline instead of vertically stacked*/
-	ul,
-	li {
-		display: inline-block;
-	}
-
-	ul,
 	h3 {
-		margin: 0px;
-	}
-
-	h3 {
-		margin-bottom: 2px;
-	}
-
-	li {
-		padding-right: 10px;
+		margin-bottom: 10px;
 	}
 }
 
-/*on smaller screens, one product per row (100% width)*/
-@media screen and (max-width: 550px) {
+
+@media screen and (min-device-width: 800px) and (min-width: 800px) {
+	#display {
+		display: flex;
+	}
+
+	/*on larger screens, filter/sort titles/li's appear as a column on left hand side of screen 
+	next to productInfo*/
+	#filterSortContainer {
+		float: left;
+		align-items: stetch;
+		width: 140px;
+		min-height: 100vh;
+		margin-right: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	li {
+		font-size: 12px;
+		min-width: 115px;
+	}
+
+	#productInfo {
+		float: left;
+		width: 85%;
+		padding-bottom: 20px;
+	}
+
+	/*on larger screens, three products per row (33% width)*/  
 	.productContainer {
-		width: 100%;
+		width: 33%;
 	}
 }
 
