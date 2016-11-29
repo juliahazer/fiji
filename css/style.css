@@ -23,6 +23,7 @@ body {
 .title {
 	background-color: #06324E;
 	width: 100%;
+	margin: 0px;
 	-webkit-margin-after: 0px;
 	-webkit-margin-before: 0px;
 	padding: 40px 20px 20px 20px;
@@ -37,6 +38,7 @@ body {
 	font-size: 22px;
 	background-color: #091A2C;
 	width: 100%;
+	margin: 0px;
 	padding: 20px;
 	padding-right: 20%;
 	/* padding and border included in the element's total width and height */
@@ -78,6 +80,7 @@ h3 {
 
 ul {
 	margin: 0px;
+	padding: 0px;
 	list-style-type: none;
 	-webkit-padding-start: 0px;
 }
