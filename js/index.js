@@ -119,9 +119,11 @@ function filter(type, equalBoolean, value){
 then sorts products by these criteria */
 function sort(attrName, direction){
 	
+
 	/*sorts the products based on the attribute name & direction +
 	stores the sorted products in the sortedContainerDivs variable*/
 	var sortedContainerDivs = $('.productContainer').sort(function(a, b){
+
 		/*get the price/name stored in the .productContainer's attr */
 		var attrA = $(a).attr(attrName);
 		var attrB = $(b).attr(attrName);
@@ -135,12 +137,13 @@ function sort(attrName, direction){
 
 		/*for asc sorts*/
 		if (direction == "asc"){
-			return attrA > attrB;
+			return attrA > attrB ? 1 : -1;
 		}
 		/*for desc sorts*/
 		else {
-			return attrA < attrB;
+			return attrA < attrB ? 1 : -1;
 		}
+		
 	});
 
 	/*display the re-ordered products*/
