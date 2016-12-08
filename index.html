@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<!--Lato font via Google-->
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:400,700'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+    	<script src="js/jquery-3.1.1.min.js"></script>
+
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+    	<!--page title inserted via index.js-->
+    	<title></title> 
+	</head>
+
+	<body>
+
+		<!--page title and description inserted vai index.js-->
+		<div id="pageInfo">
+			<h1 class="title"></h1> 
+			<div class="pageDescription"></div>
+		</div>
+
+		<!--container for filterSortContainer and productInfo -->
+		<div id="display">
+
+			<!-- holds filter and sort titles + clickable li/radio fields-->
+			<div id="filterSortContainer">
+
+				<div class="filters">
+					<h3>Filter By Price:</h3>
+					<ul>
+						<li class="filter liActive" onclick="showAll()"><label for="showAll"><input type="radio" id="showAll" name="filter" value="showAll">Show all</label></li>
+						<li class="filter" onclick="filter('less', false, 2500)"><label for="lessThan"><input type="radio" id="lessThan" name="filter" value="lessThan" >Less than $25</label></li>
+						<li class="filter" onclick="filter('greater', true, 2500)"><label for="moreThan"><input type="radio" id="moreThan" name="filter" value="moreThan">$25 or more</label></li>
+					</ul>
+				</div>
+
+				<div class="sorts">
+					<h3>Sort By:</h3> 
+					<ul>
+						<li class="sort liActive" onclick="sort('name', 'asc')"><label for="sortNameAsc"><input type="radio" id="sortNameAsc" name="sort" value="sortNameAsc">Name: A-Z</label></li>
+						<li class="sort" onclick="sort('name', 'des')"><label for="sortNameDes"><input type="radio" id="sortNameDes" name="sort" value="sortNameDes">Name: Z-A</label></li>
+						<li class="sort" onclick="sort('price', 'asc')"><label for="sortPriceAsc"><input type="radio" id="sortPriceAsc" name="sort" value="sortPriceAsc">Price: Low to High</label></li>
+						<li class="sort" onclick="sort('price', 'des')"><label for="sortPriceDes"><input type="radio" id="sortPriceDes" name="sort" value="sortPriceDes">Price: High to Low</label></li>
+					</ul>
+				</div>
+			</div><!--End filterSortContainer-->
+
+			<!--products (image, name, price) displayed via index.js -->
+			<div id="productInfo"></div>
+
+		</div><!--End Display-->
+
+		<script src="js/index.js"></script>
+	</body>
+</html>
